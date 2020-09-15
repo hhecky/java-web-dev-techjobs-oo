@@ -7,14 +7,17 @@ public class Location {
     private static int nextId = 1;
     private String value;
 
-    public Location() {
+    public Location() { //1st constructor which initializes the id field
         id = nextId;
         nextId++;
     }
 
     // TODO: Add a constructor that takes a string as a parameter and assigns it to the 'value' field. The
     //  constructor should also call the empty constructor in order to initialize the 'id' field.
-
+    public Location(String value) { //2nd constructor assigns value to the
+        this(); //value field, it also initializes id for the object by calling
+        this.value = value; //the first constructor with the this() stmt. including
+    } //this() in any employer constructor makes initialing id a default behavior
 
     // Custom toString, equals, and hashCode methods:
 
