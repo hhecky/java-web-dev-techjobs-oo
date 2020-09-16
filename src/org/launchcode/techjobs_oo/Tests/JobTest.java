@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -51,5 +52,14 @@ public class JobTest {
         assertFalse(test_job3 == test_job4);
     }
 
+    @Test
+    public void firstTestForToString() {
+        Job test_job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertThat(test_job4.toString(), is("\n" + "ID: " + test_job4.getId() + "\n" + "Name: " + test_job4.getName()));
+        }
 
-}
+
+    }
+
+
+
