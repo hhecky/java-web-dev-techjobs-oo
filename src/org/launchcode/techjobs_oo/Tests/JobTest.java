@@ -4,8 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class JobTest {
     Job test_job1;
@@ -42,6 +41,14 @@ public class JobTest {
         assertTrue(true == test_job3.getCoreCompetency() instanceof CoreCompetency);
 
 
+    }
+
+    @Test
+    public void testJobsForEquality() {
+        Job test_job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job test_job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        assertFalse(test_job3 == test_job4);
     }
 
 
