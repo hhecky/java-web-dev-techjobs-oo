@@ -75,7 +75,7 @@ public class JobTest {
 
     @Test
     public void returnDataNotAvailableIfFieldEmpty() {
-        Job test_jobEmptyField = new Job(null, null,null,null, null);
+        Job test_jobEmptyField = new Job("", null,null,null, null);
         assertThat(test_jobEmptyField.toString(), is("\n" + "ID: " + test_jobEmptyField.getId() + "\n" + "Name: " + "Data not available" + "\n" + "Employer: " + "Data not available" + "\n" + "Location: " + "Data not available" + "\n" + "Position Type: " + "Data not available" + "\n" + "Core Competency: " + "Data not available" + "\n"));
         }
 

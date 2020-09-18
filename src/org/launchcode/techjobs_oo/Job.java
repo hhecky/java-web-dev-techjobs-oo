@@ -100,7 +100,7 @@ public class Job {
     }
 
     public String ifObjectFieldEmpty(Object field) {
-        if(field == null) {
+        if(field == null || field.toString().equals("")) {
             return "Data not available";
         }
         return field.toString();
