@@ -14,10 +14,6 @@ public abstract class JobField {
         nextId++;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public JobField(String value) {
         this();
         this.value = value;
@@ -41,4 +37,17 @@ public abstract class JobField {
         return Objects.hash(id);
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
 }
+

@@ -51,7 +51,7 @@ public class JobTest {
 
         assertFalse(test_job3 == test_job4);
     }
-////this one isn't working.....
+
     @Test
     public void returnBlankLineBeforeAndAfterJobInfo() {
         Job test_job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
@@ -63,7 +63,6 @@ public class JobTest {
         expectedResult += "Location: Desert\n";
         expectedResult += "Position Type: Quality control\n";
         expectedResult += "Core Competency: Persistence\n";
-        expectedResult += "\n";
 
         assertThat(test_job4.toString(), is(expectedResult));
     }
