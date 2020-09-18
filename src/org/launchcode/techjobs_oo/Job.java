@@ -98,4 +98,16 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    public String ifObjectFieldEmpty(Object field) {
+        if(field == null) {
+            return "Data not available";
+        }
+        return field.toString();
+    }
+
+
+    public String toString() {
+        return "\n" + "ID: " + this.id + "\n" + "Name: " + this.ifObjectFieldEmpty(this.name) + "\n" + "Employer: " + ifObjectFieldEmpty(this.employer) + "\n" + "Location: " + ifObjectFieldEmpty(this.location) + "\n" + "Position Type: " + ifObjectFieldEmpty(this.positionType) + "\n" + "Core Competency: " + ifObjectFieldEmpty(this.coreCompetency) +"\n\n";
+    }
 }

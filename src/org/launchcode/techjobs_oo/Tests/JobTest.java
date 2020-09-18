@@ -51,13 +51,34 @@ public class JobTest {
 
         assertFalse(test_job3 == test_job4);
     }
+////this one isn't working.....
+    @Test
+    public void returnBlankLineBeforeAndAfterJobInfo() {
+        Job test_job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+        String expectedResult = "\n";
+        expectedResult += "ID: 3\n";
+        expectedResult += "Name: Product tester\n";
+        expectedResult += "Employer: ACME\n";
+        expectedResult += "Location: Desert\n";
+        expectedResult += "Position Type: Quality control\n";
+        expectedResult += "Core Competency: Persistence\n";
+        expectedResult += "\n";
+
+        assertThat(test_job4.toString(), is(expectedResult));
+    }
 
     @Test
-    public void firstTestForToString() {
+    public void returnLabelFollowedByDataOnItsOwnLine() {
         Job test_job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        assertThat(test_job4.toString(), is("\n" + "ID: " + test_job4.getId() + "\n" + "Name: " + test_job4.getName()));
-        }
+        assertThat(test_job4.toString(), is("\n" + "ID: " + test_job4.getId() + "\n" + "Name: " + test_job4.getName() + "\n" + "Employer: " + test_job4.getEmployer() + "\n" + "Location: " + test_job4.getLocation() + "\n" + "Position Type: " + test_job4.getPositionType() + "\n" + "Core Competency: " + test_job4.getCoreCompetency() + "\n"));
+    }
 
+    @Test
+    public void returnDataNotAvailableIfFieldEmpty() {
+        Job test_jobEmptyField = new Job(null, null,null,null, null);
+        assertThat(test_jobEmptyField.toString(), is("\n" + "ID: " + test_jobEmptyField.getId() + "\n" + "Name: " + "Data not available" + "\n" + "Employer: " + "Data not available" + "\n" + "Location: " + "Data not available" + "\n" + "Position Type: " + "Data not available" + "\n" + "Core Competency: " + "Data not available" + "\n"));
+        }
 
     }
 
