@@ -2,7 +2,7 @@ package org.launchcode.techjobs_oo;
 
 import java.util.Objects;
 
-public class Employer {
+public class Employer extends JobField{
     private int id;
     private static int nextId = 1; //declares variable nextId, since it's static it's changing value is NOT stored within any Employer object
     private String value;
